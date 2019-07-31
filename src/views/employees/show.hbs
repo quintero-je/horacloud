@@ -1,0 +1,175 @@
+  <!-- Grid column -->
+  <div class="col-md-12">
+
+
+    <ul class="nav md-pills nav-justified pills-success mb-4">
+      <li class="nav-item pl-0">
+        <a class="nav-link active " data-toggle="tab" href="#panel104" role="tab">Calendario</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#panel105" role="tab" onclick="showShift()">Turno</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#panel106" role="tab">Justificaciones</a>
+      </li>
+      <li class="nav-item pr-0">
+        <a class="nav-link" href="/employees/edit/{{employee.id}}" role="tab">Editar</a>
+      </li>
+
+    </ul>
+    <!-- Tab panels -->
+    <div class="tab-content card">
+      <!--Panel 1-->
+      <div class="tab-pane fade in show active" id="panel104" role="tabpanel">
+        
+          <div id='calendar'></div>
+       
+      </div>
+      <!--/.Panel 1-->
+      <!--Panel 2-->
+      <div class="tab-pane fade" id="panel105" role="tabpanel">
+        
+        <!-- Card -->
+        <div id="showShiftTrue" class="card card-cascade wider" style="display: none">
+
+          <!-- Card image -->
+          <div class="view view-cascade gradient-card-header peach-gradient">
+
+            <!-- Title -->
+            <h2 id="shiftTitle" class="card-header-title mb-3"></h2>
+            <hr>
+            <!-- Text -->
+            <p class="mb-0 h-4">
+              Hora de inicio: <span id="shiftStart"> </span> <br>
+              Tiempo de Descanso: <span id="shiftBreakTime"> </span> Horas<br>
+              Salida: <span id="shiftEnd"> </span><br>
+              D&iacute;as Activos: <span id="shiftDays"></span>
+            </p>
+          
+           <p id="shiftDescription" class="card-text"> Para visualizar el turno del empleado en formato calendario, vuelva al calendario y haga click en "semana", las horas laborables seran sombreadas con color verde y el check de cada d&iacute;a se mostrar&aacute; como un evento.</p>
+           <hr>
+           <p class="card-text">Si desea cambiar el turno del empleado debe desactivar el que existe actualmente y asignar uno nuevo.</p>
+
+           <button id="shiftChange" class="btn purple-gradient">Cambiar Turno</button>
+
+          </div>
+
+        </div>
+        <!-- Card -->
+        <div id="showShiftFalse" class="card card-cascade wider" style="display: none">
+
+          <!-- Card image -->
+          <div class="view view-cascade gradient-card-header peach-gradient">
+
+            <!-- Title -->
+            <h2 id="shiftTitle" class="card-header-title mb-3">
+            <button type="button" onclick="addShift()" class="btn  blue-gradient btn-rounded waves-effect">Asignar Turno</button></h2>
+            <hr>
+            <!-- Text -->
+            <p class="mb-0 h-4"> El Usuario no posee un turno asignado a su jornada, por favor asigne uno. </p>
+          
+           <p id="shiftDescription" class="card-text"></p>
+
+          </div>
+
+        </div>
+
+        
+        
+      </div>
+      <!--/.Panel 2-->
+      <!--Panel 3-->
+      <div class="tab-pane fade" id="panel106" role="tabpanel">
+
+      </div>
+      <!--/.Panel 3-->
+    </div>
+
+  </div>
+  <!-- Grid column -->
+
+</div>
+<!-- Grid row -->
+
+<!-- Modal Calendar Events-->
+<div class="modal fade" id="CalendarEvents" tabindex="-1" role="dialog" aria-labelledby="CalendarEvents"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="CalendarEventsTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-danger" id="alertDanger"></p>
+        <form class="" id="eventForm" action=""  method="POST">
+          <input type="hidden" id="employeeId" name="employeeid" value="{{employee.id}}">
+          <input type="hidden" id="start" name="start" value="">
+          <div class="md-form">
+            <input type="text" placeholder="T&iacute;tulo" id="title" name="title" class="form-control">
+          </div>
+          <div class="md-form">
+            <input placeholder="Fin del Evento" type="text" name="end" id="date-picker-example" class="form-control datepicker">
+          </div>
+          <div class="md-form">
+            <input placeholder="Duraci&oacute;n" name="duration" type="text" id="input_starttime" class="form-control timepicker" >
+          </div>
+
+          <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="rruleCheck">
+              <label class="form-check-label" for="rruleCheck">Repetir Evento</label>
+          </div>
+         <div id="rrule" style="display: none">
+           <select class="mdb-select md-form" name="freq">
+            <option value="" disabled selected>frecuencia</option>
+            <option value="daily" >Diario</option>
+            <option value="weekly" >Semanal</option>
+            <option value="monthly" >Mensual</option>
+          </select>
+          <input type="hidden" id="dtstart" name="dtstart" value="">
+         </div>
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-blue" data-dismiss="modal">Cancelar</button>
+        <button  class="btn btn-success" id="eventForm-btn" >Crear</button>
+                  
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Shift-->
+<div class="modal fade" id="EmployeeShift" tabindex="-1" role="dialog" aria-labelledby="EmployeeShift"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="EmployeeShift-title">A&ntilde;adir turno a: {{employee.name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-danger" id="alertDanger"></p>
+        <form class="" id="shiftForm" action=""  method="POST">
+          <input type="hidden" id="employeeIdShift" name="employeeid" value="{{employee.id}}">
+           <select class="mdb-select md-form" id="shiftSelect"  name="shift">
+
+          </select>
+         
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-blue" data-dismiss="modal">Cancelar</button>
+        <button  class="btn btn-success" id="shiftForm-btn" >Crear</button>
+                  
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Hora Cloud | Control horario inteligente</title>
+    {{!-- Font Awesome --}}
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    {{!-- Bootstrap core CSS --}}
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    {{!-- Material Design Bootstrap --}}
+    <link href="/css/mdb.min.css" rel="stylesheet">
+    {{!-- CUSTOM CSS --}}
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/tagsinput.css">
+    {{!-- Calendar --}}
+    <link href='/js/modules/fullcalendar/core/main.css' rel='stylesheet' />
+    <link href='/js/modules/fullcalendar/bootstrap/main.min.css' rel='stylesheet' />
+    <link href='/js/modules/fullcalendar/daygrid/main.css' rel='stylesheet' />
+    <link href="/js/modules/fullcalendar/timegrid/main.css" rel="stylesheet">
+    <link href="/js/modules/fullcalendar/list/main.css" rel="stylesheet">
+        {{!-- /Calendar --}}
+  </head>
+  <body class="cloudy-knoxville-gradient fixed-sn white-skin">
+    {{> navigation }}
+
+    <main class="container">
+      {{> messages }}
+      {{> errors }}
+      {{{ body }}}
+     
+    </main>
+     {{> footer }}
+
+    {{!-- Scritps --}}
+    {{!-- JQuery --}}
+    <script type="text/javascript" src="/js/jquery-3.4.0.min.js"></script>
+    {{!-- Bootstrap tooltips --}}
+    <script type="text/javascript" src="/js/popper.min.js"></script>
+    {{!-- Bootstrap core JavaScript --}}
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script src="/js/feather.min.js"></script>
+    {{!-- MDB core JavaScript --}}
+    <script type="text/javascript" src="/js/mdb.min.js"></script>
+    <script type="text/javascript" src="/js/addons/datatables.min.js"></script>
+    <script src="/js/addons/bootstrap-auto-dismiss-alert.js"></script> 
+    <script type="text/javascript" src="/js/tagsinput.js"></script>
+    {{!-- calendar --}}
+    <script src='/js/modules/fullcalendar/core/main.js'></script>
+    <script src='/js/modules/fullcalendar/bootstrap/main.min.js'></script>
+    <script src='/js/modules/fullcalendar/core/locales/es.js'></script>
+    <script src='/js/modules/fullcalendar/daygrid/main.js'></script>
+    <script src="/js/modules/fullcalendar/interaction/main.js"></script>
+    <script src="/js/modules/fullcalendar/timegrid/main.js"></script>
+    <script src="/js/modules/fullcalendar/list/main.js"></script>
+    <script src="/js/modules/fullcalendar/rrule/rrule.js"></script>
+    <script src="/js/modules/fullcalendar/rrule/main.min.js"></script>
+    {{!-- custom scripts --}}
+    <script type="text/javascript" src="/js/scripts.js"></script>
+    </body>
+</html>

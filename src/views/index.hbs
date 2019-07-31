@@ -1,0 +1,30 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-md-6 mt-5">
+        <!-- Form -->
+        <form id="checkForm" action="" method="POST" class="text-center mt-5" >
+            <div class="form-row">
+                <div class="col">
+                    <!-- First name -->
+                    <div class="md-form">
+                        <input type="text" name="id" id="materialRegisterFormFirstName" class="form-control">
+                        <input type="hidden" name="ip" id="client" value=""/>
+                        <label for="materialRegisterFormFirstName">Introduzca su identificador</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- Last name -->
+                    <div class="md-form">
+                        <button class="btn btn-outline-info btn-rounded btn-block waves-effect z-depth-0" type="submit">Fichar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sign up button -->
+            
+
+        </form>
+        <!-- Form -->
+        </div>
+</div>
+<script>var url = window.location;document.getElementById('checkForm').action = url;function getIP(json) {document.getElementById("client").value =  json.ip;}</script>
+{{!-- <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script> --}}

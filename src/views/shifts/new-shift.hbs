@@ -1,0 +1,75 @@
+{{> errors }}
+<div class="col-md-4 mx-auto">
+<!-- Material form login -->
+<div class="card">
+
+  <h5 class="card-header info-color white-text text-center py-4">
+    <strong>Crear Turno</strong>
+  </h5>
+
+  <!--Card content-->
+  <div class="card-body px-lg-5 pt-0">
+
+    <!-- Form -->
+    <form class="text-center" enctype="multipart/form-data" style="color: #757575;" action="/shifts/new-shift" method="POST">
+
+      <!-- name -->
+      <div class="md-form">
+        <input type="text" id="materialLoginFormName" name="name" class="form-control" autofocus>
+        <label for="materialLoginFormName">T&iacute;tulo</label>
+      </div>
+
+      <!-- description -->
+      <div class="md-form">
+        <input type="text" id="materialLoginFormDocument" name="description" class="form-control">
+        <label for="materialLoginFormDocument">Descripci&oacute;n</label>
+      </div>
+
+       <!-- start -->
+      <div class="md-form">
+        <input name="start" type="text" id="input_starttime" class="form-control timepicker">
+        <label for="input_starttime">Inicio Turno</label>
+      </div>
+
+      <!-- Break start -->
+      <div class="md-form">
+        <input name="breaktime" type="text" id="input_breaktime" class="form-control timepicker">
+        <label for="input_breaktime">Tiempo Descanso (Horas)</label>
+      </div>
+
+       <!-- end -->
+      <div class="md-form">
+        <input name="end" type="text" id="input_endtime" class="form-control timepicker">
+        <label for="input_endtime">Fin Turno</label>
+      </div>
+
+      <div class="md-form"  data-toggle="popover-hover" data-text="Por defecto de Lunes a Viernes">
+          <select id="activeDays" name="days" class="mdb-select colorful-select dropdown-primary md-form" multiple searchable="Buscar">
+            <option value="" disabled selected>D&iacute;as Activos</option>
+            <option value="mo" selected>Lunes</option>
+            <option value="tu" selected>Martes</option>
+            <option value="we" selected>Miercoles</option>
+            <option value="th" selected>Jueves</option>
+            <option value="fr" selected>Viernes</option>
+            <option value="sa">Sabado</option>
+            <option value="su">Domingo</option>
+          </select>
+          <label  for="activeDays">Días Activos</label>
+          <button class="btn-save btn btn-primary btn-sm">Listo</button>
+      </div>
+
+      
+    <hr>
+      <!-- Sign in button -->
+      <button class="btn btn-outline-info waves-effect" type="submit">Crear</button>
+
+    </form>
+    <!-- Form -->
+
+  </div>
+
+</div>
+<!-- Material form login -->
+
+</div>
+

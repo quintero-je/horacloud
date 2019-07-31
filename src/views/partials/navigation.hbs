@@ -1,0 +1,118 @@
+{{#if user}}
+ <!--Double navigation-->
+  <header>
+    <!-- Sidebar navigation -->
+    <div id="slide-out" class="side-nav sn-bg-4 fixed">
+      <ul class="custom-scrollbar">
+        <!-- Logo -->
+        <li>
+          <div class="logo-wrapper waves-light">
+            <a href="/dashboard"><img src="/img/logo.png" class="img-fluid flex-center"></a>
+          </div>
+        </li>
+        <!--/. Logo -->
+        <!--Search Form-->
+        {{!-- <li>
+          <form class="search-form" role="search">
+            <div class="form-group md-form mt-0 pt-1 waves-light">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+          </form>
+        </li> --}}
+        <!--/.Search Form-->
+        <!-- Side navigation links -->
+        <li>
+          <ul class="collapsible collapsible-accordion">
+            <li><a  class="collapsible-header waves-effect arrow-r" href="/employees" class="waves-effect">
+            <i class="fa fa-industry"></i> Empleados</a></li>
+            <li><a  class="collapsible-header waves-effect arrow-r" href="/groups" class="waves-effect">
+            <i class="fa fa-group"></i> Grupos</a></li>
+            <li><a  class="collapsible-header waves-effect arrow-r" href="/shifts" class="waves-effect">
+            <i class="fa fa-clock-o"></i> Turnos</a></li>
+            <li><a  class="collapsible-header waves-effect arrow-r" href="/brands/reports" class="waves-effect">
+            <i class="fa fa-file-archive-o"></i> Informes</a></li>
+            <li><a  class="collapsible-header waves-effect arrow-r" href="/employees" class="waves-effect">
+            <i class="fa fa-cogs"></i> Configuraci&oacute;n</a></li>
+
+            {{!-- <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-chevron-right"></i> Submit
+                blog<i class="fa fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="#" class="waves-effect">Submit listing</a>
+                  </li>
+                  <li><a href="#" class="waves-effect">Registration form</a>
+                  </li>
+                </ul>
+              </div>
+            </li> --}}
+
+          </ul>
+        </li>
+        <!--/. Side navigation links -->
+      </ul>
+       <div class="sidenav-bg mask-strong"></div> 
+    </div>
+    <!--/. Sidebar navigation -->
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+      <!-- SideNav slide-out button -->
+      <div class="float-left">
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
+      </div>
+      <!-- Breadcrumb-->
+      <div class="breadcrumb-dn mr-auto">
+        <p>Hora Cloud</p>
+      </div>
+      <ul class="nav navbar-nav nav-flex-icons ml-auto">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarBrand" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+           <i class="fa fa-group"></i> <span class="clearfix d-none d-sm-inline-block">Empleados</span> 
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarBrand">
+            <a class="dropdown-item" href="/employees/add">Crear</a>
+            <a class="dropdown-item" href="/employees">Listar Empleados</a>
+          </div>
+        </li>
+
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarBrand" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+           <i class="fa fa-industry"></i> <span class="clearfix d-none d-sm-inline-block">Empresa</span> 
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarBrand">
+            <a class="dropdown-item" href="/brands/add">Crear</a>
+            <a class="dropdown-item" href="/brands">Listar Empresas</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarBrand" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+           <i class="fa fa-industry"></i> <span class="clearfix d-none d-sm-inline-block">Usuarios</span> 
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarBrand">
+            <a class="dropdown-item" href="/users/add">Crear</a>
+            <a class="dropdown-item" href="/users/admin">Listar Usuarios</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-user"></i> 
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownUser">
+            <a class="dropdown-item" href="/users/profile">Perfil</a>
+            <a class="dropdown-item" href="/users/logout">Salir</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.Navbar -->
+  </header>
+  <!--/.Double navigation-->
+
+{{/if}}

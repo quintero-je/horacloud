@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-4 mx-auto">
+    <div class="card">
+        <!--Header-->
+        <div class="header pt-3 bg-light text-center">
+
+            <div class="row text-center">
+                {{!-- <h3 class="white-text mt-3 mb-4 pb-1 mx-5 text-center">Horacloud Login</h3> --}}
+                <img src="/img/logo.png" class="flex-center  pb-3 mx-auto d-block" width="80%"></a>
+            </div>
+
+        </div>
+        <!--Header-->
+
+        <div class="card-body mx-4 mt-4">
+          <!--Body-->
+          <form action="/users/signin" method="POST">
+            <div class="md-form">
+                <input type="text" name="email" id="email" class="form-control">
+                <label for="email">Email</label>
+            </div>
+
+            <div class="md-form pb-3">
+                <input type="password" id="pass" name="password" class="form-control">
+                <label for="pass">Contrase&ntilde;a</label>
+                <p class="font-small grey-text d-flex justify-content-end">Olvid&oacute; su
+                    <a href="#" class="dark-grey-text font-weight-bold ml-1"> Contrase&ntilde;a?</a>
+                </p>
+            </div>
+
+            <div class="text-center mb-4">
+                <button type="submit" class="btn winter-neva-gradient btn-block z-depth-2 waves-effect waves-light">Log in</button>
+            </div>
+          </form>
+
+        </div>
+
+    </div>
+  </div>
+</div>

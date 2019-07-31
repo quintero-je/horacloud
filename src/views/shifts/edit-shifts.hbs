@@ -1,0 +1,79 @@
+{{#each errors}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  {{text}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/each}}
+
+<div class="col-md-4 mx-auto">
+  <!-- Material form login -->
+  <div class="card">
+
+    <h5 class="card-header info-color white-text text-center py-4">
+      <strong>Editar {{shift.name}}</strong>
+    </h5>
+
+    <!--Card content-->
+    <div class="card-body px-lg-5 pt-0">
+
+      <!-- Form -->
+    <form class="text-center" action="/shifts/edit/{{shift._id}}?_method=PUT"  enctype="multipart/form-data" method="POST">
+          <input type="hidden" name="_method" value="PUT">
+
+        <!-- name -->
+        <div class="md-form">
+          <input type="text" id="materialLoginFormName" name="name" class="form-control"  value="{{shift.name}}">
+          <label for="materialLoginFormName">Raz&oacute;n Social</label>
+        </div>
+
+        
+      <!-- description -->
+      <div class="md-form">
+        <input type="text" id="materialLoginFormDocument" name="description" class="form-control" value="{{shift.description}}">
+        <label for="materialLoginFormDocument">Descripci&oacute;n</label>
+      </div>
+
+       <!-- start -->
+      <div class="md-form">
+        <input name="start" type="text" id="input_starttime" class="form-control timepicker"  value="{{shift.start}}">
+        <label for="input_starttime">Inicio Turno</label>
+      </div>
+
+      <!-- Break start -->
+      <div class="md-form">
+        <input name="breaktime" type="text" id="input_breaktime" class="form-control timepicker" value="{{shift.breaktime}}">
+        <label for="input_breaktime">Tiempo Descanso (Horas)</label>
+      </div>
+
+       <!-- end -->
+      <div class="md-form">
+        <input name="end" type="text" id="input_endtime" class="form-control timepicker" value="{{shift.end}}">
+        <label for="input_endtime">Fin Turno</label>
+      </div>
+
+      <div class="md-form"  data-toggle="popover-hover" data-text="Seleccione los nuevos días activos o no modifique para no hacer cambios en esta secci&oacute;n">
+          <select id="activeDays" name="days" class="mdb-select colorful-select dropdown-primary md-form" multiple searchable="Buscar">
+            <option value="" disabled selected>D&iacute;as Activos</option>
+            <option value="mo">Lunes</option>
+            <option value="tu">Martes</option>
+            <option value="we">Miercoles</option>
+            <option value="th">Jueves</option>
+            <option value="fr">Viernes</option>
+            <option value="sa">Sabado</option>
+            <option value="su">Domingo</option>
+          </select>
+          <label  for="activeDays">Días Activos</label>
+          <button onclick="this.prevenDefault()"class="btn-save btn btn-primary btn-sm">Listo</button>
+      </div>
+
+        <hr>
+        <!-- Sign in button -->
+        <button class="btn btn-outline-info waves-effect" type="submit">Actualizar</button>
+      </form>
+      <!-- Form -->
+    </div>
+  </div>
+  <!-- Material form login -->
+</div>

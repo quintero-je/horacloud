@@ -2,7 +2,7 @@
 
 _Sistema de fichaje y control horario multi-empresa para trabajadores capaz de registrar el inicio y final de la jornada laboral diaria, con una interfaz simple e intuitiva para permitir al usuario el registro de manera sencilla y con un mínimo de pasos a seguir._
 
-## Comenzando 🚀
+## Comenzemos 🚀
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 

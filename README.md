@@ -24,9 +24,9 @@ MongoDB >= v3.6.4
 Para despliegue en modo desarrollo, debe Modificar el archivo database.js en la línea 3 a partir del caracter Col 35, la URI que se encuentra entre comillas y sustituirla por la direccion de conexión de su servidor de base de datos:
 
 ```
-'''
+´´´
 var db = process.env.MONGOURI || 'mongodb://localhost/horacloud-db';
-'''
+´´´
 ```
 _Y luego ejecutar el sigueinte comando:_
 

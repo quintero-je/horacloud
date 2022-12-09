@@ -18,7 +18,7 @@
     "bootstrap-auto-dismiss-alert": "^1.0.2",
     "bootstrap-timepicker": "^0.5.2",
     "connect-flash": "^0.1.1",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
     "fullcalendar": "^3.10.0",
